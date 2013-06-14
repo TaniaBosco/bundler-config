@@ -1,0 +1,5 @@
+<html>
+<% @students.each do |s| %>
+<%= s.name %>,<%= s.email %>
+<% end %>
+</html>

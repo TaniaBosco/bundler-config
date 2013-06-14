@@ -1,0 +1,9 @@
+<html>
+<%= form_for :student, url: { action: 'save_student', controller: "students", method: :post} do |f| %>
+   <%= f.text_field :name %>
+   <%= f.text_field :email %>
+<%= f.label :date %>
+<%= f.text_field :published_on, 'data-behaviour' => 'datepicker' %></br>
+ <%= f.submit %>
+<% end %>
+</html>

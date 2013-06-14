@@ -1,0 +1,24 @@
+class StudentsController < ApplicationController
+def index
+  @students = Student.find(:all)
+  @date = params[:month] ? Date.parse(params[:month]) : Date.today
+end
+def show
+     @student = Student.find(params[:id])
+end
+def tania
+  
+end
+
+def save_student
+  @student = Student.new(params[:student])
+  if @student.save
+  	redirect_to student_path(@student.id)
+  else
+  	render action: "tania"
+  end
+
+
+ end
+  
+end

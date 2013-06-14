@@ -1,0 +1,16 @@
+<h1>Listing Subjects</h1>
+<ul id="subject_list">
+<% @students.each do |c| %>
+<li><%= link_to c.name, :action => 'show', :id => c.id %>
+<% end %>
+</ul>
+<html>
+
+<div id="add_subject">
+<%= form_for :student, :remote => true, url: { action: 'save_student', controller: "students", method: :post},:update => "subject_list", :position => :bottom,:html => {:id => 'subject_form'} do |f| %>
+   <%= f.text_field :name %>
+   <%= f.text_field :email %>
+ <%= f.submit %>
+<% end %>
+</div>
+</html>

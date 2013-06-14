@@ -1,0 +1,31 @@
+<div id = 'outer'>
+<%= form_for :event, url: { action: 'save_event', controller: "events", method: :post} do |f| %>
+<p>
+  <%=f.label :title %>
+  <br/>
+  <%=f.text_field :title %>
+</p>
+<p>
+  <%=f.label :description %>
+  <br/>
+  <%=f.text_area :description, :rows => 4, :cols => 30 %>
+</p>
+<p>
+  <%=f.label :starttime, 'Start Time' %>
+  <br/>
+  <%=f.datetime_select :start %>
+</p>
+<p>
+  <%=f.label :endtime, 'End Time' %>
+  <br/>
+  <%=f.datetime_select :end %>
+</p>
+<p>
+  <%=f.label :all_day %>
+  <%=f.check_box :allday %>
+</p>
+<p>
+  <%=f.submit 'Create' %> <span id = "creating_events" style = "display:none;">Creating, Please wait...</span>
+</p>
+<% end %> 
+</div>
